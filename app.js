@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
 const config = require('./config/config');
-const apiRoutes = require('./routes/apiRoutes');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const { errorHandler } = require('./utils');
@@ -26,7 +25,6 @@ app.use(compression());
 app.use(morgan('dev'));
 
 // Configurar las rutas de la aplicación
-app.use('/api', apiRoutes);
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 
